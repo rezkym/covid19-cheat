@@ -1,0 +1,35 @@
+HTTrack3.49-2+htsswf+htsjava launched on Tue, 26 May 2020 00:44:00 at https://coderthemes.com/adminto/layouts/horizontal/dark.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://coderthemes.com/adminto/layouts/horizontal/dark.html -O1 "C:\xampp\htdocs\laravel\covid19\template\Covid19" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/Trident/ (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/custombox/custombox.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/Edge/ (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/custombox/custombox.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/GET (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/custombox/custombox.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/treeview/32px.png (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/treeview/style.css)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/treeview/throbber.gif (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/treeview/style.css)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/treeview/40px.png (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/treeview/style.css)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/img/switch.png (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/multiselect/multi-select.css)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/isDSTShifted is deprecated. See http://momentjs.com/guides/ (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/moment/moment.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/fonts/dropify.eot (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/dropify/dropify.min.css)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/fonts/dropify.woff (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/dropify/dropify.min.css)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/fonts/dropify.ttf (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/dropify/dropify.min.css)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/fonts/dropify.svg (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/dropify/dropify.min.css)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/blots/ (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/quill/quill.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/formats/ (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/quill/quill.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/img/loading.gif (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/x-editable/bootstrap-editable.css)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/img/clear.png (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/x-editable/bootstrap-editable.css)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/xl/worksheets/sheet1.xml (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/datatables/buttons.html5.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/xl/workbook.xml (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/datatables/buttons.html5.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/xl/styles.xml (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/datatables/buttons.html5.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/[Content_Types].xml (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/datatables/buttons.html5.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/buttons.pdf (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/datatables/buttons.html5.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/ (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/pdfmake/pdfmake.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/HEAD (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/pdfmake/pdfmake.min.js)
+00:50:05	Error: 	"Not Found" (404) at link https://coderthemes.com/adminto/layouts/horizontal/assets/libs/img/sprite-green.png (from https://coderthemes.com/adminto/layouts/horizontal/assets/libs/hopscotch/hopscotch.min.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 6 minutes 5 seconds : 328 links scanned, 303 files written (21163258 bytes overall) [9939255 bytes received at 27230 bytes/sec], 14725203 bytes transferred using HTTP compression in 216 files, ratio 23%, 14.2 requests per connection
+(24 errors, 0 warnings, 0 messages)

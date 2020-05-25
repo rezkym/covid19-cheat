@@ -6,7 +6,6 @@
 /public/assets
 # Storage
 /storage/*.key
-/vendor
 
 # Env
 .env

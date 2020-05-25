@@ -1,10 +1,21 @@
 /node_modules
+
+# Public 
 /public/hot
 /public/storage
+/public/assets
+# Storage
 /storage/*.key
 /vendor
+
+# Env
 .env
 .env.backup
+
+# Template
+/template
+
+# Dll
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

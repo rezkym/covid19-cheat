@@ -9,7 +9,7 @@
 /vendor
 
 # Env
-.env
+#.env
 .env.backup
 
 # Template

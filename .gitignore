@@ -9,7 +9,6 @@
 /vendor
 
 # Env
-#.env
 .env.backup
 
 # Template

@@ -33,7 +33,7 @@
                                 {{ csrf_field() }}
 
                                 <div class="form-group mb-3">
-                                    <label for="username"> Username </label>
+                                    <label for="username"> Username / Email </label>
                                     <input class="form-control {{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}" type="text" name="username" id="username" value="{{ old('username') ?: old('email') }}" placeholder="Nama pengguna" required>
                                 </div>
 

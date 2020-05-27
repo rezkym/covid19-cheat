@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
+/* Use Illuminate */
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request; 
+use Illuminate\Validation\Rule;
+
+/* Use Auth */
 use Auth;
+
+/* Use User Model */
 use App\User;
+use App\user\CheckStatus;
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 
 class LoginController extends Controller
 {
@@ -45,163 +52,144 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         /** 
-         * Set Type Login
-         * Email or Username
-        */
-        $loginType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+         * Request Credentials
+         */
+        $username   = $request->username;
+        $email      = $request->username;
+        $password   = $request->password;
+        $isEmail    = filter_var($email, FILTER_VALIDATE_EMAIL);
 
         /**
-         * Condition Type Login
+         * Get Account From Database
          */
-        if($loginType == 'email')
-        {
-            /** 
-             * Manual email validation
-             */
-            $UsersEmail = User::where('email', $request->username)->get();
+        $getByEmail     = User::whereEmail($email)->first();
+        $getByUsername  = User::whereUsername($username)->first();
 
-            /**
-             * Message Rules
-             * 
-             * @return array
-             */
-            $messages = [
-                
-                "email.email"           => "Format email salah",
-                "email.unique"          => "Email tidak di temukan",
-                "password.required"     => "Kata sandi tidak boleh kosong",
-                "password.min"          => "Kata sandi minimal 4 karakter"
-            ];
-    
-            /** 
-             * Validator Rules
-             * 
-             * @return array
-             */
-            $validator = Validator::make(
-                $request->all(), 
-                [
-                    'email'     => 'email|unique:users,email',
-                    'password'  => 'required|min:4'
-                ], 
-                $messages
-            );
-    
-            /**
-             * Run Authentication Validation
-             * 
-             * @return void
-             */
-            if ($UsersEmail->count() == 0 OR $UsersEmail->count() > 1) 
-            {
-                /**
-                 * If validator false
-                 * 
-                 * @return array
-                 */
-                return back()->withErrors(['email' => 'Email tidak di temukan'])->withInput();
+        /**
+         * Get Account Status
+         */
+        $userStatus = $this->checkStatusAccount($username);
 
-            } else if($validator->fails())
-            {
-                /**
-                 * If validator false
-                 * 
-                 * @return array
-                 */
-                return back()->withErrors($validator)->withInput();
-            }
-            {
-                /**
-                 * Run Auth:attempt
-                 */
-                if (Auth::attempt(['email' => $request->username, 'password' => $request->password, 'account_status' => 'active'])) 
-                {
-                    
-                    /**
-                     * If Login successfuly, redirect to dashboard
-                     */
-                    return redirect()->intended(route('home'));
-                }
-    
-                /**
-                 * If login unsuccessful
-                 */
-                // if unsuccessful -> redirect back
-                return redirect()->back()->withInput($request->only('username'))->withErrors(
-                    [
-                        'password' => 'Kata sandi salah.',
-                    ]
-                );
-            }
-
-        } else if($loginType == 'username')
+        /**
+         * Filter Credentials
+         * 
+         * withError
+         * this function is use key name="username" in login.blade.php
+         */
+        if($getByEmail == false AND $isEmail == true)
         {
             /**
-             * Message Rules
-             * 
-             * @return array
+             * If Email not found
              */
-            $messages = [
-                "username.required"     => "Username tidak boleh kosong",
-                "username.min"          => "Username minimal 4 karakter",
-                "username.exists"       => "Username tidak di temukan",
-                "password.required"     => "Kata sandi tidak boleh kosong",
-                "password.min"          => "Kata sandi minimal 4 karakter"
-            ];
-    
-            /** 
-             * Validator Rules
-             * 
-             * @return array
-             */
-            $validator = Validator::make(
-                $request->all(), 
-                [
-                    'username'  => 'required|min:4|exists:users,username',
-                    'password'  => 'required|min:4'
-                ], 
-                $messages
-            );
-    
+            return redirect()->back()->withErrors(['username' => 'Email tidak di temukan'])->withInput();
+            
+        } else if($getByUsername == false AND $isEmail == false)
+        {
             /**
-             * Run Authentication Validation
-             * 
-             * @return void
+             * If Username notfound
              */
-            if ($validator->fails()) 
-            {
-                /**
-                 * If validator false
-                 * 
-                 * @return array
-                 */
-                return back()->withErrors($validator)->withInput();
+            return redirect()->back()->withErrors(['username' => 'Username tidak di temukan'])->withInput();
 
-            } else 
-            {
-                /**
-                 * Run Auth:attempt
-                 */
-                if (Auth::attempt(['username' => $request->username, 'password' => $request->password, 'account_status' => 'active'])) 
-                {
-                    
-                    /**
-                     * If Login successfuly, redirect to dashboard
-                     */
-                    return redirect()->intended(route('home'));
-                }
-    
-                /**
-                 * If login unsuccessful
-                 */
-                // if unsuccessful -> redirect back
-                return redirect()->back()->withInput($request->only('username'))->withErrors(
-                    [
-                        'password' => 'Kata sandi salah.',
-                    ]
-                );
-            }
+        } else if($userStatus['status'] != true)
+        {
+            /**
+             * If status account is not actived
+             */
+            return redirect()->back()->withErrors(['error' => $userStatus['msg']])->withInput();
+
+        } else 
+        {
+            $loginUsing = ($getByEmail) ? $email : $username;
+            $loginKey   = ($getByEmail) ? 'email' : 'username';
         }
 
+        /**
+         * Login Process
+         */
+        if (Auth::attempt([$loginKey => $loginUsing, 'password' => $password])) 
+        {
+            
+            /**
+             * If Login successfuly, redirect to dashboard
+             */
+            return redirect()->intended(route('home'));
+        }
+
+        /**
+         * If failed to login turn back to login form
+         * and give error password
+         */
+        return redirect()->back()->withInput($request->only('username'))->withErrors(
+        [
+            'password' => 'Kata sandi salah',
+        ]);
+
+        /**
+         * If login is successfuly then redirect to home
+         */
+        //return redirect()->route('home');
+
+    }
+
+    private function checkStatusAccount($username)
+    {
+        /**
+         * Get user account information
+         */
+        $getAccount = User::where('username', $username)
+        ->orWhere('email', $username)
+        ->first();
+
+        /**
+         * Check if user avaible
+         */
+        if(!empty($getAccount))
+        {
+            $userStatus = $getAccount->account_status;
+
+        } else 
+        {
+            $userStatus = 'notfound';
+        }
+
+        /**
+         * Filter status
+         */
+        switch ($userStatus) {
+            case 'nonactive':
+                return [
+                    'status'    => false,
+                    'msg'       => 'Mohon maaf akun kamu belum aktif, hubungi layanan bantuan'
+                ];
+                break;
+
+            case 'suspended':
+                return [
+                    'status'    => false,
+                    'msg'       => 'Mohon maaf akun kamu di tangguhkan, hubungi layanan bantuan'
+                ];
+                break;
+
+            case 'deleted':
+                return [
+                    'status'    => false,
+                    'msg'       => 'Mohon maaf akun kamu sudah terhapus, hubungi layanan bantuan'
+                ];
+                break;
+
+            case 'notfound':
+                return [
+                    'status'    => false,
+                    'msg'       => 'Akun tersebut belum terdaftar'
+                ];
+                break;
+            
+            default:
+            return [
+                'status'    => true,
+                'msg'       => 'ACCOUNT_STATUS_CONFIRMED'
+            ];
+                break;
+        }
     }
 }

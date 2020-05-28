@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,9 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 /* Admin Routes */
+Route::get('/register/pre', function () {
+    Auth::logout();
+    return view('auth.register_pre');
+});
 
 /* User Routes */

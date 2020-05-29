@@ -35,3 +35,8 @@ Route::get('/register/pre', function () {
 });
 
 /* User Routes */
+Route::group(['middleware' => ['auth']], function () {
+
+    // Home Controller After Logging In
+    Route::resource('/change_hdsn', 'UserController');
+});

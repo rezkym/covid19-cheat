@@ -14,7 +14,9 @@ class AddUplinkToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('uplink')->default('server')->after('remember_token');
+            $table->bigInteger('parent_id')->unsigned()->nullable();
+            $table->foreign('parent_id')->references('id')->on('users')
+                ->onUpdate('set null')->onDelete('set null');
         });
     }
 

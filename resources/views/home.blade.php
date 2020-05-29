@@ -103,7 +103,7 @@
                                     </div>
                                 </div>
 
-                                <h4 class="header-title mt-0 mb-4"> Penjualan Reseller </h4>
+                                <h4 class="header-title mt-0 mb-4"> Penjualan Cheat </h4>
 
                                 <div class="widget-chart-1">
                                     <div class="widget-chart-box-1 float-left" dir="ltr">
@@ -114,7 +114,7 @@
                                     </div>
                                     <div class="widget-detail-1 text-right">
                                         <h2 class="font-weight-normal pt-2 mb-1"> 4569 </h2>
-                                        <p class="text-muted mb-1">Revenue today</p>
+                                        <p class="text-muted mb-1"> Keseluruhan </p>
                                     </div>
                                 </div>
                             </div>
@@ -129,17 +129,17 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right">
                                         <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item">Lapor kesalahan</a>
+                                        <a href="javascript:void(0);" class="dropdown-item"> Lapor kesalahan </a>
                                     </div>
                                 </div>
 
-                                <h4 class="header-title mt-0 mb-3">Penjualan Agen </h4>
+                                <h4 class="header-title mt-0 mb-3"> Penjualan Cheat </h4>
 
                                 <div class="widget-box-2">
                                     <div class="widget-detail-2 text-right">
                                         <span class="badge badge-pink badge-pill float-left mt-3">32% <i class="mdi mdi-trending-up"></i> </span>
                                         <h2 class="font-weight-normal mb-1"> 158 </h2>
-                                        <p class="text-muted mb-3">Revenue today</p>
+                                        <p class="text-muted mb-3"> Hari ini </p>
                                     </div>
                                     <div class="progress progress-bar-alt-pink progress-sm">
                                         <div class="progress-bar bg-pink" role="progressbar"

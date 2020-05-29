@@ -3,13 +3,13 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                               2016 - 2020 &copy; Adminto theme by <a href="#">Coderthemes</a> 
+                               {{ date('Y') }} &copy; Covid19 VVIP Cheat
                             </div>
                             <div class="col-md-6">
                                 <div class="text-md-right footer-links d-none d-sm-block">
-                                    <a href="javascript:void(0);">About Us</a>
-                                    <a href="javascript:void(0);">Help</a>
-                                    <a href="javascript:void(0);">Contact Us</a>
+                                    <a href="javascript:void(0);"> Tentang </a>
+                                    <a href="javascript:void(0);"> Bantuan </a>
+                                    <a href="javascript:void(0);"> Hubungi </a>
                                 </div>
                             </div>
                         </div>

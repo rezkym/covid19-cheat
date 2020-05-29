@@ -3,7 +3,7 @@
     
 <head>
         <meta charset="utf-8" />
-        <title> @yield('title') </title>
+        <title> @yield('title-header') </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="#1 Cheat VVIP Indonesia, menyediakan cheat dengan fitur unggulan serta nyaman di gunakan." name="description" />
         <meta content="Rezky Maulana" name="author" />
@@ -50,6 +50,7 @@
                     <div class="container-fluid">
 
                         {{-- ========== Page Title ========== --}}
+                        @yield('title-content')
 
 
                         <!-- ============================================================== -->

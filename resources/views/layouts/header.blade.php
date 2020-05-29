@@ -74,25 +74,25 @@
                                     <a href="{{ route('home') }}"><i class="mdi mdi-view-dashboard"></i>Beranda</a>
                                 </li>
 
-                                @if(Auth::user()->level == 'master')
+                                @if(Auth::user()->account_level == 'master')
                                     {{-- Master Fitur --}}
                                     <li class="has-submenu">
-                                        <a href="#"> <i class="mdi mdi-chart-donut-variant"></i>Charts <div class="arrow-down"></div></a>
+                                        <a href="#"> <i class="mdi mdi-account-group-outline"></i> Pengguna <div class="arrow-down"></div></a>
                                         <ul class="submenu">
                                             <li>
-                                                <a href="charts-flot.html">Flot Charts</a>
+                                                <a href="javascript:void(0);"> Statistik Pengguna </a>
                                             </li>
                                             <li>
-                                                <a href="charts-morris.html">Morris Charts</a>
+                                                <a href="javascript:void(0);"> Data Pengguna </a>
                                             </li>
                                             <li>
-                                                <a href="charts-chartist.html">Chartist Charts</a>
+                                                <a href="javascript:void(0);"> Tambah Pengguna </a>
                                             </li>
                                             <li>
-                                                <a href="charts-chartjs.html">Chartjs Charts</a>
+                                                <a href="javascript:void(0);">Laporan Pengguna</a>
                                             </li>
                                             <li>
-                                                <a href="charts-other.html">Other Charts</a>
+                                                <a href="javascript:void(0);"> Sampah Pengguna </a>
                                             </li>
                                         </ul>
                                     </li>

@@ -23,6 +23,19 @@ class HomeController extends Controller
      */
     public function index()
     {
+        /**
+         * Master View
+         */
         return view('home');
+    }
+
+    /**
+     * Master View
+     *
+     * @return array
+     */
+    private function masterView()
+    {
+        
     }
 }

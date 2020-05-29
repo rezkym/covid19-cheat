@@ -14,7 +14,7 @@ class AddUplinkToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('uplink')->after('remember_token');
+            $table->string('uplink')->default('server')->after('remember_token');
         });
     }
 

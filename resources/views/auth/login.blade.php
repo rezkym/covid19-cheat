@@ -1,6 +1,9 @@
 {{-- Extends layout auth --}}
 @extends('auth.layouts.app')
 
+{{-- Title Page --}}
+@section('title', 'Masuk')
+
 {{-- Google Tag Manager --}}
 
 {{-- Content Login --}}

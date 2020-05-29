@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!--- Title -->
-        <title>Masuk {{ env('APP_NAME') }}</title>
+        <title>@yield('title') {{ env('APP_NAME') }}</title>
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
